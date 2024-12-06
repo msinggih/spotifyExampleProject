@@ -6,24 +6,28 @@
 //
 
 import UIKit
+protocol NamedPlaylistDelegate {
+    func confirmButtonAction()
+}
 
 class NamedPlaylistVC: UIViewController {
-
+    @IBOutlet weak var confirmButton: UIButton!
+    
+    var delegate: NamedPlaylistDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setupUI() {
+        confirmButton.layer.cornerRadius = 26
+        
     }
-    */
 
+    @IBAction func confirmButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true)
+        delegate?.confirmButtonAction()
+    }
+    
 }
