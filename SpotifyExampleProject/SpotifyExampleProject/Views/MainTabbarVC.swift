@@ -24,12 +24,14 @@ class MainTabbarVC: UITabBarController , UITabBarControllerDelegate {
         let tabSearchItem = UITabBarItem(title: "Search", image: UIImage(named: "searchIcon"),selectedImage: UIImage(named: "searchIcon"))
         let tabYourLibraryItem = UITabBarItem(title: "Your Library", image: UIImage(named: "libraryIcon"),selectedImage: UIImage(named: "libraryIcon"))
         
+        let navController = UINavigationController(rootViewController: yourLibraryVC)
+        
         homeVC.tabBarItem = tabHomeItem
         searchVC.tabBarItem = tabSearchItem
-        yourLibraryVC.tabBarItem = tabYourLibraryItem
+        navController.tabBarItem = tabYourLibraryItem
         
         self.tabBar.tintColor = .white
-        self.viewControllers = [homeVC , searchVC, yourLibraryVC]
+        self.viewControllers = [homeVC , searchVC, navController]
     }
     
 }

@@ -6,24 +6,27 @@
 //
 
 import UIKit
+protocol CreatePlayListDelegate {
+    func handleNavigation()
+}
 
 class CreatePlaylistVC: UIViewController {
-
+    var delegate : CreatePlayListDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // setup UIView corner radius
+        self.view.layer.cornerRadius = 4
+        
+        // setup tap gesture in UIView
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        self.view.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(tap)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        self.dismiss(animated: true)
+        delegate?.handleNavigation()
     }
-    */
-
 }

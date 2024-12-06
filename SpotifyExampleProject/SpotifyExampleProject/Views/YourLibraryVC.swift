@@ -11,7 +11,7 @@ class YourLibraryVC: UIViewController {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var playlistTableView: UITableView!
-    
+    let nav = UINavigationController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class YourLibraryVC: UIViewController {
         playlistTableView.dataSource = self
         playlistTableView.register(UINib(nibName: "PlayListCell", bundle: nil), forCellReuseIdentifier: "PlayListCell")
         
-        //        Setup category collection view
+        //Setup category collection view
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
@@ -33,9 +33,24 @@ class YourLibraryVC: UIViewController {
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         categoryCollectionView.register(UINib(nibName: "CategoryCollectionCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionCell")
-        //categoryCollectionView
+        
+        //Navigation Controller setup
+        self.navigationController?.navigationBar.isHidden = true
     }
     
+    @IBAction func createPlaylistButtonTapped(_ sender: Any) {
+        let vc = CreatePlaylistVC()
+        vc.delegate = self
+        let navVC = UINavigationController(rootViewController: vc)
+        
+        navVC.isModalInPresentation = true
+        if let sheet = navVC.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { context in
+                0.1 * context.maximumDetentValue
+            }), .large()]
+        }
+        self.navigationController?.present(navVC, animated: true)
+    }
 }
 
 
@@ -72,3 +87,10 @@ extension YourLibraryVC: UICollectionViewDelegate, UICollectionViewDataSource, U
     }
 }
 
+
+extension YourLibraryVC: CreatePlayListDelegate {
+    func handleNavigation() {
+        let vc = NamedPlaylistVC()
+        present(vc, animated: true)
+    }
+}

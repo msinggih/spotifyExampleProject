@@ -51,6 +51,9 @@
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="addIcon" title=""/>
+                            <connections>
+                                <action selector="createPlaylistButtonTapped:" destination="-1" eventType="touchUpInside" id="xRV-Sh-JTR"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
