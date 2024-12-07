@@ -6,29 +6,26 @@
 //
 
 import UIKit
+import CoreData
+
 protocol NamedPlaylistDelegate {
     func confirmButtonAction()
 }
 
 class NamedPlaylistVC: UIViewController {
     @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var textfieldPlaylist: UITextField!
     
     var delegate: NamedPlaylistDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         // Do any additional setup after loading the view.
-    }
-    
-    func setupUI() {
-        confirmButton.layer.cornerRadius = 26
-        confirmButton.layer.masksToBounds = false
-        
     }
 
     @IBAction func confirmButtonTapped(_ sender: Any) {
         self.dismiss(animated: true)
         delegate?.confirmButtonAction()
+        
     }
     
 }

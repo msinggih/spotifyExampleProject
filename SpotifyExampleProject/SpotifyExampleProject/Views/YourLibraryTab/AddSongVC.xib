@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddSongVC" customModule="SpotifyExampleProject" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="aOy-TJ-GOg" id="5z8-Pd-Ofm"/>
+                <outlet property="tableView" destination="lMK-MT-YKO" id="eYM-hJ-t2T"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" barStyle="black" searchBarStyle="prominent" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="aOy-TJ-GOg">
+                    <rect key="frame" x="16" y="75" width="267" height="56"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="jkv-le-8oH"/>
+                    </connections>
+                </searchBar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebY-RA-sHV">
+                    <rect key="frame" x="300" y="85.666666666666671" width="77" height="35"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                    <connections>
+                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="EVz-0S-dhe"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent searches" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QM-wO-DH9">
+                    <rect key="frame" x="15.999999999999993" y="155" width="126.33333333333331" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="SJu-Sd-yHr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lMK-MT-YKO">
+                    <rect key="frame" x="0.0" y="211" width="393" height="607"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="lMK-MT-YKO" firstAttribute="top" secondItem="6QM-wO-DH9" secondAttribute="bottom" constant="24" id="3fg-Q0-OnM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lMK-MT-YKO" secondAttribute="trailing" id="8sa-aB-gAF"/>
+                <constraint firstItem="lMK-MT-YKO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nhh-ed-171"/>
+                <constraint firstItem="aOy-TJ-GOg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="U1d-V7-Czn"/>
+                <constraint firstItem="6QM-wO-DH9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="XGu-qg-dld"/>
+                <constraint firstItem="aOy-TJ-GOg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Z1P-lV-hWE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ebY-RA-sHV" secondAttribute="trailing" constant="16" id="bgq-B3-ce4"/>
+                <constraint firstItem="6QM-wO-DH9" firstAttribute="top" secondItem="aOy-TJ-GOg" secondAttribute="bottom" constant="24" id="etO-rI-rtc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lMK-MT-YKO" secondAttribute="bottom" id="h2S-42-m0Z"/>
+                <constraint firstItem="ebY-RA-sHV" firstAttribute="centerY" secondItem="aOy-TJ-GOg" secondAttribute="centerY" id="h2T-jx-ZXa"/>
+                <constraint firstItem="ebY-RA-sHV" firstAttribute="leading" secondItem="aOy-TJ-GOg" secondAttribute="trailing" constant="17" id="vaN-vX-bcT"/>
+            </constraints>
+            <point key="canvasLocation" x="61.832061068702288" y="19.718309859154932"/>
+        </view>
+    </objects>
+</document>

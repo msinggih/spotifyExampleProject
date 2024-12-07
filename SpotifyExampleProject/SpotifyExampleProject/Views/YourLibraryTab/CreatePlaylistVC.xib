@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -37,10 +36,9 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="d7V-mY-ZlR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="1Wb-Ll-lQu"/>
+                <constraint firstItem="d7V-mY-ZlR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="1Wb-Ll-lQu"/>
                 <constraint firstItem="Duo-UC-veB" firstAttribute="top" secondItem="d7V-mY-ZlR" secondAttribute="top" id="Lz3-fS-yXa"/>
                 <constraint firstItem="uge-bC-DKO" firstAttribute="leading" secondItem="Duo-UC-veB" secondAttribute="leading" id="Mbr-Ei-7jV"/>
                 <constraint firstItem="uge-bC-DKO" firstAttribute="top" secondItem="Duo-UC-veB" secondAttribute="bottom" id="v65-ch-5gM"/>

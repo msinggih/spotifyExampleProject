@@ -30,9 +30,9 @@ class PlaylistVC: UIViewController {
     }
     
     @IBAction func addSongListButtonTapped(_ sender: Any) {
-        let vc = SearchVC()
-        let nav = UINavigationController()
-        nav.pushViewController(vc, animated: true)
+        print("addSong list button tapped")
+        let vc = AddSongVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -23,4 +23,10 @@ class SongListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setupData(titleLabel:String, subtitleLabel:String) {
+        self.titleLabel.text = titleLabel
+        self.subtitleLabel.text = subtitleLabel
+    }
+    
+    
 }

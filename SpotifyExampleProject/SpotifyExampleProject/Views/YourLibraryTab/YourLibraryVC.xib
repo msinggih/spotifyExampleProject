@@ -4,13 +4,17 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YourLibraryVC" customModule="SpotifyExampleProject" customModuleProvider="target">
             <connections>
                 <outlet property="categoryCollectionView" destination="ky7-Oy-sWB" id="YiJ-zt-30W"/>
+                <outlet property="playlistCollectionView" destination="yF9-WA-Qha" id="cPx-aV-bgm"/>
                 <outlet property="playlistTableView" destination="kkr-bv-A8G" id="ImB-De-Aws"/>
+                <outlet property="sortIcon" destination="8hu-TL-5kn" id="lt1-JA-aEp"/>
+                <outlet property="toggleCollectionTableViewButton" destination="tlZ-gF-pXD" id="c2D-KY-y9X"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -81,6 +85,16 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yF9-WA-Qha">
+                    <rect key="frame" x="0.0" y="231" width="393" height="587"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JVo-Y4-KM8">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlZ-gF-pXD">
                     <rect key="frame" x="354.66666666666669" y="201" width="15" height="16"/>
                     <constraints>
@@ -89,12 +103,18 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="gridIcon"/>
+                    <connections>
+                        <action selector="toggleButtonTapped:" destination="-1" eventType="touchUpInside" id="iXx-0j-bl1"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kkr-bv-A8G">
                     <rect key="frame" x="0.0" y="231" width="393" height="587"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sortIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8hu-TL-5kn">
+                    <rect key="frame" x="16" y="192" width="109" height="34"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,22 +123,32 @@
                 <constraint firstItem="tlZ-gF-pXD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="201" id="6JD-AF-Ufv"/>
                 <constraint firstItem="tlZ-gF-pXD" firstAttribute="centerX" secondItem="oQK-q3-mJ3" secondAttribute="centerX" id="7ns-Ng-bR9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ky7-Oy-sWB" secondAttribute="trailing" constant="6" id="8OY-Qi-hFR"/>
+                <constraint firstItem="8hu-TL-5kn" firstAttribute="centerY" secondItem="tlZ-gF-pXD" secondAttribute="centerY" id="9jL-QK-rOL"/>
                 <constraint firstItem="8dB-3Q-rkT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="6" id="BIX-fS-dgO"/>
+                <constraint firstItem="yF9-WA-Qha" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DHn-qb-S63"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yF9-WA-Qha" secondAttribute="trailing" id="H9R-wT-c0F"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yF9-WA-Qha" secondAttribute="bottom" id="KBI-c4-Xsm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8dB-3Q-rkT" secondAttribute="trailing" constant="6" id="KYE-L4-0iC"/>
                 <constraint firstItem="kkr-bv-A8G" firstAttribute="top" secondItem="tlZ-gF-pXD" secondAttribute="bottom" constant="14" id="T8A-ez-v3M"/>
                 <constraint firstItem="ky7-Oy-sWB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="6" id="UIT-p2-7Ed"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kkr-bv-A8G" secondAttribute="bottom" id="bRJ-b1-npq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kkr-bv-A8G" secondAttribute="trailing" id="cYe-MV-k6F"/>
                 <constraint firstItem="ky7-Oy-sWB" firstAttribute="top" secondItem="8dB-3Q-rkT" secondAttribute="bottom" constant="1" id="fQr-oW-U0a"/>
+                <constraint firstItem="yF9-WA-Qha" firstAttribute="top" secondItem="tlZ-gF-pXD" secondAttribute="bottom" constant="14" id="iSf-HC-rrw"/>
                 <constraint firstItem="8dB-3Q-rkT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="11" id="kBe-tZ-lre"/>
+                <constraint firstItem="8hu-TL-5kn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="tCq-O2-P4T"/>
                 <constraint firstItem="kkr-bv-A8G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vkB-I7-fsf"/>
             </constraints>
-            <point key="canvasLocation" x="21" y="20"/>
+            <point key="canvasLocation" x="20.610687022900763" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
         <image name="addIcon" width="26" height="26"/>
         <image name="gridIcon" width="16" height="16.333333969116211"/>
         <image name="photoSample" width="35" height="34"/>
+        <image name="sortIcon" width="109" height="34"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

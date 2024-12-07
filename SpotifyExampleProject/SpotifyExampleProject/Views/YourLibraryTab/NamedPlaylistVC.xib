@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NamedPlaylistVC" customModule="SpotifyExampleProject" customModuleProvider="target">
             <connections>
                 <outlet property="confirmButton" destination="bd1-vO-PlS" id="4CL-rP-uER"/>
+                <outlet property="textfieldPlaylist" destination="ZqJ-lY-JJp" id="N9F-nK-fId"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
