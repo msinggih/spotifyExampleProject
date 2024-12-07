@@ -22,6 +22,7 @@ class NamedPlaylistVC: UIViewController {
     
     func setupUI() {
         confirmButton.layer.cornerRadius = 26
+        confirmButton.layer.masksToBounds = false
         
     }
 

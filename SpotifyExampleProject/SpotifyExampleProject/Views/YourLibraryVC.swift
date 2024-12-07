@@ -91,6 +91,16 @@ extension YourLibraryVC: UICollectionViewDelegate, UICollectionViewDataSource, U
 extension YourLibraryVC: CreatePlayListDelegate {
     func handleNavigation() {
         let vc = NamedPlaylistVC()
+        vc.delegate = self
         present(vc, animated: true)
     }
 }
+
+extension YourLibraryVC: NamedPlaylistDelegate {
+    func confirmButtonAction() {
+        let vc = PlaylistVC()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+}
+
+

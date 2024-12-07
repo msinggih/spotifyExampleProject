@@ -38,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="kQI-O6-pvn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="6dE-Js-5ZH"/>
                     <constraint firstAttribute="trailing" secondItem="kQI-O6-pvn" secondAttribute="trailing" constant="16" id="B3j-1o-Kdm"/>
@@ -51,7 +51,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="54.961832061068698" y="19.718309859154932"/>
+            <point key="canvasLocation" x="20" y="-2"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaylistVC" customModule="SpotifyExampleProject" customModuleProvider="target">
             <connections>
+                <outlet property="libraryTitleLabel" destination="9DV-9V-KWG" id="f7M-zo-SyI"/>
+                <outlet property="subtitleLabel" destination="uiJ-Wu-u6d" id="cQz-oq-qJD"/>
+                <outlet property="tableView" destination="yTg-hw-8Hx" id="BWF-80-qin"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,12 +20,78 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playlistBackground" translatesAutoresizingMaskIntoConstraints="NO" id="qzw-IP-DpL">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyO-h1-O2T">
+                    <rect key="frame" x="357" y="69" width="26" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="26" id="AdN-Ab-EoQ"/>
+                        <constraint firstAttribute="height" constant="26" id="bsc-cZ-ycH"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="addIcon" title=""/>
+                    <connections>
+                        <action selector="addSongListButtonTapped:" destination="-1" eventType="touchUpInside" id="hBV-Wb-YQx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDd-oW-3M6">
+                    <rect key="frame" x="12" y="69" width="20" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="MPt-8o-cZC"/>
+                        <constraint firstAttribute="width" constant="20" id="PNM-jT-15H"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="backArrow" title=""/>
+                    <connections>
+                        <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="YwD-oe-hLW"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My First Library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DV-9V-KWG">
+                    <rect key="frame" x="12" y="120" width="143" height="22"/>
+                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiJ-Wu-u6d">
+                    <rect key="frame" x="11.999999999999996" y="148" width="45.666666666666657" height="13.666666666666657"/>
+                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yTg-hw-8Hx">
+                    <rect key="frame" x="0.0" y="198" width="393" height="620"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="uiJ-Wu-u6d" firstAttribute="top" secondItem="9DV-9V-KWG" secondAttribute="bottom" constant="6" id="05A-CI-Cxt"/>
+                <constraint firstItem="yTg-hw-8Hx" firstAttribute="top" secondItem="uiJ-Wu-u6d" secondAttribute="bottom" constant="36.333333333333343" id="3Tb-UK-5To"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="FDd-oW-3M6" secondAttribute="top" constant="-10" id="AGf-Gy-GXF"/>
+                <constraint firstItem="9DV-9V-KWG" firstAttribute="leading" secondItem="FDd-oW-3M6" secondAttribute="leading" id="Aw6-X6-pdW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yTg-hw-8Hx" secondAttribute="trailing" id="M3L-bM-jbH"/>
+                <constraint firstItem="9DV-9V-KWG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="MS1-4g-893"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yTg-hw-8Hx" secondAttribute="bottom" id="QDi-yp-UjB"/>
+                <constraint firstItem="FDd-oW-3M6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="V2L-9I-e23"/>
+                <constraint firstAttribute="bottom" secondItem="qzw-IP-DpL" secondAttribute="bottom" id="WAx-jm-OX2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qzw-IP-DpL" secondAttribute="trailing" id="WLE-1S-Syx"/>
+                <constraint firstItem="uiJ-Wu-u6d" firstAttribute="leading" secondItem="9DV-9V-KWG" secondAttribute="leading" id="djh-TN-T9Z"/>
+                <constraint firstItem="qzw-IP-DpL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ejI-3e-Xz1"/>
+                <constraint firstItem="qzw-IP-DpL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jh0-xc-B5V"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="KyO-h1-O2T" secondAttribute="top" constant="-10" id="ndb-qL-CDc"/>
+                <constraint firstItem="yTg-hw-8Hx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oQz-MW-yEv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KyO-h1-O2T" secondAttribute="trailing" constant="10" id="pI7-Vc-uto"/>
+            </constraints>
             <point key="canvasLocation" x="6" y="21"/>
         </view>
     </objects>
     <resources>
+        <image name="addIcon" width="26" height="26"/>
+        <image name="backArrow" width="22.666666030883789" height="16"/>
+        <image name="playlistBackground" width="414" height="926"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
